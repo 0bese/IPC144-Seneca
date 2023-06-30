@@ -1,0 +1,54 @@
+﻿///////////////////////////////////////////////////////////////////////////
+                                     Reflection
+                                     Workshop - #3 (P2)
+Full Name  :  KOJO ANYANE OBESE
+Student ID#: 137653226
+Email                  :  kaobese@myseneca.ca
+Section               : NEE
+ 
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+ 
+1.   printf(" 1|           %d        |              %d           |   %d   |\n", ((cof1_type == 'L' || cof1_type == 'l') && (cofstrgth == 'L'|| cofstrgth =='l')) || ((cof1_type == 'M' || cof1_type == 'm') && (cofstrgth == 'M' || cofstrgth == 'm')) || ((cof1_type == 'R' || cof1_type == 'r') && (cofstrgth == 'R' || cofstrgth == 'r')), ((ndailysvgs >= 1 && ndailysvgs <= 4) && (cbag1_wt >= 0 && cbag1_wt <= 250)) || ((ndailysvgs > 4 && ndailysvgs < 10) && (cbag1_wt > 250 && cbag1_wt <= 500)) || ((ndailysvgs >= 10) && (cbag1_wt >= 1000)), ((cof1crm_ncrm == 'Y' || cof1crm_ncrm == 'y') && (cofcrm_ncrm == 'Y' || cofcrm_ncrm == 'y')) || (cof1crm_ncrm == 'N' || cof1crm_ncrm == 'n') && (cofcrm_ncrm == 'N' || cofcrm_ncrm == 'n'));
+a.    I used 5
+i.                     == which means operands are equal
+ii.                   <= which means left side is less or equal to right side of expression
+iii.                  >= which means left side is greater or equal to right side of expression
+iv.                 <  which means left side is less than the right side of expression
+v.                   >  which means left side is greater than the right
+ 
+b.    I used 2
+i.                     && which means both operands are true
+ii.                   || which means either operand is true
+ 
+2.     
+a.    Using DeMorgan’s Law:
+printf(“9. Based on product ID, product3 is unique -> %d\n”, !(prod1_ID == prod3_ID || prod2_ID == prod3_ID));
+ 
+b.    Another way
+printf(“9. Based on product ID, product3 is unique -> %d\n”,  ((prod1_ID != prod3_ID) && (prod2_ID != prod3_ID)));
+ 
+c.         My code
+printf("9. Based on product ID, product 3 is unique -> %d\n", (prod2_ID != prod3_ID) && (prod1_ID != prod3_ID));
+ 
+3.
+a.     
+const double GRAMS_IN_LBS = 453.5924;
+         char cof1_type, cof2_type, cof3_type;
+         int cbag1_wt, cbag2_wt, cbag3_wt, ndailysvgs;
+         char cof1crm_ncrm, cof2crm_ncrm, cof3crm_ncrm;
+         double cbag1_lbs, cbag2_lbs, cbag3_lbs;
+         char cofstrgth, cofcrm_ncrm;
+b.     
+const double GRAMS_IN_LBS = 453.5924;
+ 
+//Variable declaration
+char coffeeType1, coffeeType2, coffeeType3;
+int coffeeBagWeight1, coffeeBagWeight2, coffeeBagWeight3, dailyServings;
+char coffeeCream1, coffeeCream2, coffeeCream3;
+double coffeeBagWeightLbs1, coffeeBagWeightLbs2, coffeeBagWeightLbs3;
+char coffeeStrength, coffeeCreamCream;
+char coffeeCreamNonCream1, coffeeCreamNonCream2, coffeeCreamNonCream3;

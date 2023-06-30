@@ -1,0 +1,21 @@
+﻿///////////////////////////////////////////////////////////////////////////
+                                   Reflection
+                                 Workshop - #5
+Full Name  : Kojo Anyane Obese
+Student ID#: kaobese@myseneca.ca
+ 
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+ 
+1.          
+a.         By defining macros for MIN_YEAR, MAX_YEAR, and LOG_DAYS, the code becomes more flexible and reusable. If you need to change these values in the future, you can simply modify the macro definitions instead of searching for every occurrence of the hardcoded values throughout the code.
+b.         By using variable names like MM (month), YYYY (year), morningrate, eveningrate, etc., the code becomes more self-explanatory. It is easier for other programmers (including yourself) to understand the purpose and meaning of these variables.
+c.         The code calculates and aggregates the morning and evening ratings for multiple days. By using variables like morningrateSUM and eveningrateSUM, the code keeps track of the cumulative sum of ratings. Using variables allows for iterative calculations and updating the values as needed.
+d.         he code checks the input values for validity. It verifies if the year is between MIN_YEAR and MAX_YEAR (inclusive), and if the month is between JAN and DEC (inclusive). If the inputs are invalid, it displays error messages. By using variables and conditional statements, you can perform these checks and handle errors appropriately.
+ 
+2.          
+a.         By separating the validation and calculation logic, each part of the code focuses on a specific responsibility, adhering to the principle of separation of concerns. The validation routine ensures that the input values meet the required criteria for instance, within a specific range, while the calculation routine performs the sum and average calculations. This separation improves code readability, maintainability, and modularity. If you need to modify or enhance the calculation logic, you can do so without affecting the validation routine, and vice versa.
+b.         The sum and average logic is placed outside the validation routine to facilitate incremental calculations. In the given code, the ratings are collected in a loop, and with each iteration, the morningrate and eveningrate values are summed up. Placing the sum logic inside the loop allows for the incremental calculation of the total ratings. If the sum calculation was included within the validation routine, it would reset the sum with each iteration, resulting in incorrect calculations.

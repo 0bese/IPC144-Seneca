@@ -1,0 +1,38 @@
+﻿///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #6
+Full Name  : KOJO ANYANE OBESE
+Student ID#: 137653226
+
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+
+
+1. The three types of iteration constructs, do-while, for, and while, exist because they offer different functionalities and are suited for different scenarios. Although you can achieve similar results with different iteration constructs, choosing the most appropriate one leads to more readable and maintainable code.
+
+
+1. The do-while loops ensure that the user enters valid values for net income and the number of wishlist items. They guarantee that the code will execute at least once before checking the condition, allowing for initial input and validation.
+ 
+2. The for loop is used to iterate over the wishlist items, prompting the user to enter item details and displaying them. It is suitable because the number of wishlist items is known, and a fixed number of iterations is required.
+ 
+3. The while loop handles the menu selection and performs the corresponding actions based on user input. It allows for repeated menu displays and actions until the user decides to quit. The loop terminates when the user selects the quit option.
+ 
+The for loop is typically favored when working with arrays because it allows for precise control over the number of iterations, provides a clear and concise syntax, limits the scope of the loop variable, and follows a widely accepted convention for array iteration. It enhances code readability and reduces the chances of errors or confusion when traversing arrays.
+
+
+2. a. I tested by providing different inputs and checked the output.
+b. I used syntax highlighting and error indicators to find syntactic issues.
+c. I analyzed my program logic and compared it with expected behavior to find semantic issues.
+4. I used print statements or breakpoints to help inspect variables and the execution flow.
+5. I used the debugger to step through the code and track issues.
+6. I fixed the identified problems and retested the program.
+
+
+3. The submitter shows me exactly where the error is. I open the code in VS code and identify and correct the error. Then I upload it back to my matrix, compile it and resubmit it. 
+In this instance, it indicates that I inputted a wrong value. First, I will try submitting it again. I will carefully input the values correctly while making sure everything appears where they need to appear.

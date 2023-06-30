@@ -1,0 +1,22 @@
+﻿///////////////////////////////////////////////////////////////////////////
+                                   Reflection
+                                 Workshop - #4
+Full Name  : KOJO ANYANE OBESE
+Student ID#: 137653226
+ 
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+
+
+1. I used descriptive variable names for easy readability. I wanted to make it as self explanatory as possible. I used consistent indentation throughout the code. Each level of indentation represents a nested block of code, making it clear which statements belong to which loops or conditionals. I added comments at strategic points to explain the purpose of certain code blocks. For example, comments like // For Apples, // Picking the groceries, etc., help in understanding the flow of the program and the intention behind specific sections. For the loops and iteration, I aligned each kelly bracket in the nested block of codes.
+
+
+2. Nesting helps in organizing code and expressing complex conditions. Without nesting, the code would require additional variables and flags to keep track of various conditions, leading to increased code complexity and reduced readability. Nesting allows for the evaluation of multiple conditions at different levels. Without nesting, it would be challenging to implement multi-level conditions and perform different actions based on the outcome of each condition.Without nesting, repetitive code blocks would need to be duplicated, leading to code redundancy and decreased maintainability. Error handling would become less organized, and it would be harder to pinpoint the source of errors or exceptions.
+
+
+3. The "if/else if..." alternative path logic allows for a more efficient and streamlined approach. Once a condition is satisfied, the subsequent conditions are not evaluated, saving unnecessary computation. This construct ensures that only one block of code is executed based on the first condition that evaluates to true, eliminating ambiguity and providing clear and predictable behavior. Additionally, the "if/else if..." construct promotes code readability and maintainability by clearly outlining the logical flow of the code and reducing redundancy. Whereas When using a series of "if" statements, each condition is evaluated sequentially, even if a condition has already been satisfied. This means that if the user enters a value within the valid range, all subsequent conditions will still be checked unnecessarily, resulting in redundant computations.

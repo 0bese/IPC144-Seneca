@@ -1,0 +1,19 @@
+﻿///////////////////////////////////////////////////////////////////////////
+ 
+                              Reflection
+                             Workshop - #1
+Full Name  :  KOJO ANYANE OBESE
+Student ID#: 137653226
+Email      : kaobese@myseneca.ca
+Section    : NEE
+ 
+Authenticity Declaration:
+ 
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+ 
+1.     I had no programming experience prior to this. The introduction to programming was too fast since I could not understand in class. Upon using resources online, I am catching up.
+2.     Computers understand instructions in binary in order to perform tasks. We code in a high level language which is converted into Binary (0 and 1) for the computer to perform our tasks. This is made possible by compilers.
+3.     I want to be able to write and run programs, create softwares. I need this for a future in computer aided drug discovery.

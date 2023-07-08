@@ -27,7 +27,7 @@ struct playerinfo
 {
     int lives;
     char playersymbol;
-    int numTreasure
+    int numTreasure;
     int positionhist[MAXIMUM_PATH_LENGTH];
 };
 
@@ -37,7 +37,7 @@ struct gameinfo
     int pathLength;
     int bombSpot[MAXIMUM_PATH_LENGTH];
     int treasureSpot[MAXIMUM_PATH_LENGTH]; 
-}
+};
 
 int main(void)
 {
@@ -49,7 +49,7 @@ int main(void)
     struct gameinfo game;
 
     printf("================================\n");
-    printf("         Treasure Hunt!         \n");
+    printf("         Treasure Hunt!\n");
     printf("================================\n\n");
 
     //player configuration
@@ -84,7 +84,7 @@ int main(void)
 
         if ((game.pathLength < MINIMUM_PATH_LENGTH || game.pathLength > MAXIMUM_PATH_LENGTH) || (game.pathLength % MULTPLES != 0))
         {
-            printf("    Must be a multiple of 5 and betweeb 10-70!!!\n");
+            printf("     Must be a multiple of 5 and between 10-70!!!\n");
         }
 
     } while ((game.pathLength < MINIMUM_PATH_LENGTH || game.pathLength > MAXIMUM_PATH_LENGTH) || (game.pathLength % MULTPLES != 0));
@@ -93,11 +93,11 @@ int main(void)
     do
     {
         printf("Set the limit for number of moves allowed: ");
-        scanf("%d", game.max_moves);
+        scanf("%d", &game.max_moves);
 
         if (game.max_moves < player.lives || game.max_moves > (int)(0.75 * game.pathLength))
         {
-            printf("    Value must be between %d and %d\n", player.lives), (int)(0.75 * game.pathLength);
+            printf("    Value must be between %d and %d\n", player.lives, (int)(0.75 * game.pathLength));
         }
     } while(game.max_moves < player.lives || game.max_moves > (int)(0.75 * game.pathLength));
 
@@ -150,14 +150,14 @@ int main(void)
 
     // game details
     printf("Game:\n");
-    printf("   Path Length: %d", game.pathLength);
+    printf("   Path Length: %d\n", game.pathLength);
     printf("   Bombs      : ");
     // displaying from bomb array
     for (j = 0; j < game.pathLength; j++)
     {
         printf("%d", game.bombSpot[j]);
     }
-    printf("\n")
+    printf("\n");
 
     printf("   Treasure   : ");
     // displaying from treasure array

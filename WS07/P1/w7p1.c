@@ -129,7 +129,7 @@ int main(void)
     //prompt for treasure placement
     for (i = 0; i < game.pathLength; i += 5)
     {
-        printf("   Postions [%2d-%2d]: ", i + 1, i +5);
+        printf("   Positions [%2d-%2d]: ", i + 1, i +5);
         scanf("%d %d %d %d %d", &game.treasureSpot[i], &game.treasureSpot[i + 1], &game.treasureSpot[i +2], &game.treasureSpot[i +3], &game.treasureSpot[i + 4]);
     }
 

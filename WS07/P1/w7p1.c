@@ -113,7 +113,7 @@ int main(void)
     // prompt for bomb placement
     for (i = 0; i < game.pathLength; i += 5)
     {
-        printf("   Postions [%2d-%2d]: ", i + 1, i + 5);
+        printf("   Positions [%2d-%2d]: ", i + 1, i + 5);
         scanf("%d %d %d %d %d", &game.bombSpot[i], &game.bombSpot[i + 1], &game.bombSpot[i +2], &game.bombSpot[i + 3], &game.bombSpot[i + 4]);
     }
     printf("BOMB placement set\n\n");
@@ -124,7 +124,7 @@ int main(void)
     printf("------------------\n");
     printf("Enter the treasure placements in sets of 5 where a value\n");
     printf("of 1=TREASURE, and 0=NO TREASURE. Space-delimit your input.\n");
-    printf("(Example: 10011) NOTE: there are 35 to set!\n");
+    printf("(Example: 1 0 0 1 1) NOTE: there are 35 to set!\n");
 
     //prompt for treasure placement
     for (i = 0; i < game.pathLength; i += 5)

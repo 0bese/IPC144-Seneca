@@ -1,0 +1,50 @@
+﻿///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #7
+Full Name  :  KOJO ANYANE OBESE
+Student ID#: 137653226
+
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+1. Yes,
+The loop iterates over each spot in the currentSpot array.
+It counts the number of 'V' characters (visited spots) in vCount.
+If vCount is zero, it prints a newline character.
+Otherwise, it prints the current spot character until it encounters a 'V', then prints a newline.
+Drawing the Second Line (Spot Items):
+The loop iterates over each spot in the spotItem array and prints the corresponding character.
+Drawing the Third Line (Ruler):
+The loop iterates over each position in the game.pathLength.
+If the position is a multiple of 10, it prints the tens digit of the position.
+Otherwise, it prints a vertical separator ('|').
+Drawing the Fourth Line (Number Labels):
+The loop iterates over each group of 10 positions in the game.pathLength.
+It prints the numbers 1 to 10 horizontally for each group.
+
+
+2. The use of structures, such as playerinfo and gameinfo, allows the player and game information to be grouped together, making the code more organized and readable. ​​Without structures, the alternative approach would require separate variables for each data point, resulting in a cluttered and less cohesive codebase. By using structures, the code achieves better code modularity, readability, and maintainability. It promotes the encapsulation of related data and functions, making the code easier to manage and modify. The use of structures also improves code reusability, as multiple instances of the same structure can be created.
+
+
+
+
+3.    if (vCount == 0)
+            {
+            }
+            else
+            {
+                for (k = 0; k < game.pathLength; k++)
+                {
+                    {
+                        break;
+                    }
+                    else
+                    {
+                    }
+                }
+           }

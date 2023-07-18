@@ -103,4 +103,4 @@ void displayFinalAnalysis(const struct CatFoodInfo cfi);
 // ----------------------------------------------------------------------------
 
 // 7. Logic entry point 
-void start (void);
+void start(void);

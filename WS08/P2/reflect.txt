@@ -1,0 +1,28 @@
+﻿///////////////////////////////////////////////////////////////////////////
+                                   Reflection
+                                 Workshop - #8
+Full Name  : KOJO ANYANE OBESE
+Student ID#: 137653226
+ 
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+1.         Benefit:
+Functions that return values directly through the return statement or by using pointers can lead to cleaner and more concise code, especially when the returned value is immediately used in a calculation or as a parameter for another function call.
+Drawback:
+Allowing functions to return values both through return statements and pointer arguments can make the code more complex, especially if different methods are used inconsistently within the same program. It may lead to confusion and make the code harder to maintain.
+ 
+ 
+2.         The displayCatFoodData function is responsible for displaying a formatted record of cat food data. However, it not only displays the data but also accesses the values of the cat food information struct (struct CatFoodInfo) directly using pointers. In other words, it is responsible for both displaying data and obtaining the data from the struct, which makes it less cohesive. To improve cohesion, the function should focus solely on displaying the data. The data retrieval should be done separately in another function, and the necessary values should be passed as arguments to displayCatFoodData.
+ 
+ 
+3.         Advantage:
+When a function needs to work with multiple related data elements, passing a structure allows all the relevant data to be encapsulated into a single parameter. This simplifies the function's interface, making it easier to read and write.
+ 
+To make it more efficient:
+Instead of passing the entire structure by value, functions can accept pointers to the structure. This way, the function can directly modify the original data in memory without creating copies of the entire structure.
+ 
+Improvement of displayCatfoodData function:
+The displayCatfoodData function currently takes multiple parameters that directly access the data from the cfi structure. To make it more efficient and flexible, it can be modified to accept a pointer to the struct CatFoodInfo and extract the required data internally. This will make the function independent of the structure's internal representation and improve its reusability.

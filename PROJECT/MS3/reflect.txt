@@ -1,0 +1,39 @@
+﻿/*/////////////////////////////////////////////////////////////////////////
+                            Assignment 1 - Reflection
+Full Name  : KOJO ANYANE OBESE
+Student ID#: 137653226
+Email          : kaobese@myseneca.ca
+Section        : NEE
+ 
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+/////////////////////////////////////////////////////////////////////////*/
+ 
+1.          
+a.         int timeSlotAvailable(struct Date date, struct Time time, struct Appointment *app, int maxAppointments);
+This function checks if there's an open time slot for an appointment on a given date and time. It takes four inputs: the date and time for the new appointment, an array of existing appointments called "app," and the maximum number of possible appointments, represented by "maxAppointments." The function examines if the new appointment's date and time overlap with any existing appointments. If there's no overlap, it returns 1, indicating availability. If there's an overlap, it returns 0, indicating unavailability.
+ 
+b.         int nextSlotAvailable(struct Appointment *app, int maxAppointments);
+This function identifies the next open time slot for an appointment. It uses an array of existing appointments called "app" and the maximum possible appointments, "maxAppointments," as inputs. The function scans through all potential time slots in a day, checking each one's availability. When an available time slot is found, the function returns its index in the "app" array. If no open slot is found, it returns -1. This function automates appointment scheduling by finding the soonest available time slot, optimizing scheduling while ensuring all appointments fit within open slots.
+ 
+c.         int validAppointment(int patientNumber, struct Date date, struct Appointment *app, int maxAppointments);
+This function verifies if a patient already has an appointment on a specific date. It uses the patient's number, the appointment date, an array of existing appointments called "app," and "maxAppointments" as inputs. The function is employed in the "removeAppointment" function to validate whether the user's request to cancel an appointment is valid or not. It ensures that the patient indeed has an appointment on the provided date, making sure the operation is carried out correctly.
+ 
+2.         Input validation challenges are alleviated through the minimum use of scanf. Directly
+employing scanf can result in buffer overflow and unexpected behavior, particularly when input formats do not match expectations. By using dedicated input functions like inputIntPositive() and inputCharOption(), among others, the code becomes better at handling input errors and guiding users towards entering valid data.
+The user experience benefits from this approach as well. An excessive use of scanf can cause a disjointed and confusing user experience. Dedicated input functions offer prompts that are contextually relevant and instructions that are simple, raising the quality of user engagement. Consequently, users are led through the input process with enhanced intuitiveness.
+The principles of modularization come into play as these input functions encapsulate the process of reading and validating distinct input types. This modular strategy increases code reusability and maintainability. Should input requirements undergo changes, the scope of adjustments will be narrowed to these functions, reducing the chances of introducing errors.
+Augmenting code readability is another advantage. By reducing direct scanf use and adopting descriptively named input functions, enhances code readability. Developers can understand the intention behind each input and validation stage, fostering improved teamwork and streamlined debugging efforts.
+Consistency in input handling exists using specialized input functions. A harmonized approach to input processing is adopted, thereby decreasing inconsistencies and potential issues.
+ 
+3.          
+a.         int timeSlotAvailable(struct Date date, struct Time time, struct Appointment *app, int maxAppointments);
+The "timeSlotAvailable" function is part of the Appointments module. It checks if a specific date and time are open for making appointments. The function scans through the list of appointments, comparing their dates and times to the provided ones. If the slot is open, it returns 1; if it's taken, it returns 0. This function is placed here because it matches the purpose of managing appointments.
+ 
+b.         int nextSlotAvailable(struct Appointment *app, int maxAppointments);
+"nextSlotAvailable" is also found in the Appointments module for the same reasons as the previous function. It identifies the index of the next available appointment spot in the list. If none are open, it returns -1.
+ 
+c.         int validAppointment(int patientNumber, struct Date date, struct Appointment *app, int maxAppointments);
+The "validAppointment" function is used in the "removeAppointment" operation. Its purpose is to ensure that patient records are sorted properly. It wasn't too challenging to define, mostly requiring a mix of existing utility functions along with some new ones. The focus was on creating functions that perform specific tasks to help with the process.

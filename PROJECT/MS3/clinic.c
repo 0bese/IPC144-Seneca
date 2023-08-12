@@ -433,17 +433,17 @@ void removePatient(struct Patient patient[], int max)
 // Todo:
 void viewAllAppointments(struct ClinicData* data)
 {
-    int i, pindex;
-    struct Appointment temp[MAX_APPOINTMENTS];
+    int i, p_index;
+    struct Appointment temp1[MAX_APPOINTMENTS];
     struct Patient temp2[MAX_PETS];
 
     sortAllAppointment(data->appointments, data->maxAppointments);
 
-    displayScheduleTableHeader(&temp[0].date, 1);
+    displayScheduleTableHeader(&temp1[0].date, 1);
 
     for (i = 0; i < MAX_APPOINTMENTS; i++)
     {
-        temp[i] = data->appointments[i];
+        temp1[i] = data->appointments[i];
     }
 
     for (i = 0; i < MAX_PETS; i++)
@@ -451,10 +451,10 @@ void viewAllAppointments(struct ClinicData* data)
         temp2[i] = data->patients[i];
     }
 
-    for (i = 0; i < data->maxAppointments && temp[i].patientNumber != 0; i++)
+    for (i = 0; i < data->maxAppointments && temp1[i].patientNumber != 0; i++)
     {
-        pindex = findPatientIndexByPatientNum(temp[i].patientNumber, temp2, MAX_PETS);
-        displayScheduleData(&temp2[pindex], &temp[i], 1);
+        p_index = findPatientIndexByPatientNum(temp1[i].patientNumber, temp2, MAX_PETS);
+        displayScheduleData(&temp2[p_index], &temp1[i], 1);
     }
 
     putchar('\n');
@@ -465,14 +465,14 @@ void viewAllAppointments(struct ClinicData* data)
 // Todo:
 void viewAppointmentSchedule(struct ClinicData* data)
 {
-    int i, pindex;
-    struct Appointment temp[MAX_APPOINTMENTS];
+    int i, p_index;
+    struct Appointment temp1[MAX_APPOINTMENTS];
     struct Patient temp2[MAX_PETS];
     struct Date input;
 
     for (i = 0; i < MAX_APPOINTMENTS; i++)
     {
-        temp[i] = data->appointments[i];
+        temp1[i] = data->appointments[i];
     }
 
     for (i = 0; i < MAX_PETS; i++)
@@ -486,12 +486,12 @@ void viewAppointmentSchedule(struct ClinicData* data)
 
     displayScheduleTableHeader(&input, 0);
 
-    for (i = 0; i < data->maxAppointments && temp[i].patientNumber != 0; i++)
+    for (i = 0; i < data->maxAppointments && temp1[i].patientNumber != 0; i++)
     {
-        if (temp[i].date.year == input.year && temp[i].date.month == input.month && temp[i].date.day == input.day)
+        if (temp1[i].date.year == input.year && temp1[i].date.month == input.month && temp1[i].date.day == input.day)
         {
-            pindex = findPatientIndexByPatientNum(temp[i].patientNumber, temp2, MAX_PETS);
-            displayScheduleData(&temp2[pindex], &temp[i], 0);
+            p_index = findPatientIndexByPatientNum(temp1[i].patientNumber, temp2, MAX_PETS);
+            displayScheduleData(&temp2[p_index], &temp1[i], 0);
         }
     }
 
@@ -502,7 +502,7 @@ void viewAppointmentSchedule(struct ClinicData* data)
 // Todo:
 void addAppointment(struct Appointment* appointment, const int max_app, struct Patient* patient, const int max_pet)
 {
-    int i, index, pnumber, pindex = -1, repeat = 0, flag = 0;
+    int i, index, pnumber, p_index = -1, repeat = 0, flag = 0;
     struct Date input_date;
     struct Time input_time;
 
@@ -510,12 +510,12 @@ void addAppointment(struct Appointment* appointment, const int max_app, struct P
 
     if (index != max_app)
     {
-        while (pindex == -1)
+        while (p_index == -1)
         {
             printf("Patient Number: ");
             pnumber = inputIntPositive();
-            pindex = findPatientIndexByPatientNum(pnumber, patient, max_pet);
-            if (pindex == -1) printf("ERROR: Patient record not found!\n");
+            p_index = findPatientIndexByPatientNum(pnumber, patient, max_pet);
+            if (p_index == -1) printf("ERROR: Patient record not found!\n");
         }
 
         while (!flag)
@@ -551,14 +551,14 @@ void addAppointment(struct Appointment* appointment, const int max_app, struct P
 // Todo:
 void removeAppointment(struct Appointment* appointment, const int max_app, struct Patient* patient, const int max_pet)
 {
-    int i, pnumber, pindex = -1, found = 0, selection, lastindex, appindex;
+    int i, pnumber, p_index = -1, found = 0, selection, lastindex, appIndex;
     struct Date input;
 
     printf("Patient Number: ");
     pnumber = inputIntPositive();
-    pindex = findPatientIndexByPatientNum(pnumber, patient, max_pet);
+    p_index = findPatientIndexByPatientNum(pnumber, patient, max_pet);
 
-    if (pindex == -1)
+    if (p_index == -1)
     {
         printf("ERROR: Patient record not found!\n\n");
     }
@@ -575,7 +575,7 @@ void removeAppointment(struct Appointment* appointment, const int max_app, struc
                 appointment[i].date.day == input.day)
             {
                 found = 1;
-                appindex = i;
+                appIndex = i;
             }
         }
 
@@ -586,7 +586,7 @@ void removeAppointment(struct Appointment* appointment, const int max_app, struc
 
         else
         {
-            displayPatientData(&patient[pindex], FMT_FORM);
+            displayPatientData(&patient[p_index], FMT_FORM);
             printf("Are you sure you want to remove this appointment (y,n): ");
             selection = !(inputCharOption("yn") == 'y');
 
@@ -598,12 +598,12 @@ void removeAppointment(struct Appointment* appointment, const int max_app, struc
             else
             {
                 lastindex = lastAppointmentIndex(appointment, max_app);
-                appointment[appindex].patientNumber = appointment[lastindex].patientNumber;
-                appointment[appindex].date.year = appointment[lastindex].date.year;
-                appointment[appindex].date.month = appointment[lastindex].date.month;
-                appointment[appindex].date.day = appointment[lastindex].date.day;
-                appointment[appindex].time.hour = appointment[lastindex].time.hour;
-                appointment[appindex].time.min = appointment[lastindex].time.min;
+                appointment[appIndex].patientNumber = appointment[lastindex].patientNumber;
+                appointment[appIndex].date.year = appointment[lastindex].date.year;
+                appointment[appIndex].date.month = appointment[lastindex].date.month;
+                appointment[appIndex].date.day = appointment[lastindex].date.day;
+                appointment[appIndex].time.hour = appointment[lastindex].time.hour;
+                appointment[appIndex].time.min = appointment[lastindex].time.min;
                 appointment[lastindex].patientNumber = 0;
                 putchar('\n');
                 printf("Appointment record has been removed!\n\n");

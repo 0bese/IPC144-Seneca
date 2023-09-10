@@ -15,6 +15,7 @@ piece of work is entirely of my own creation.
 
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 // include the user library "core" so we can use those functions
 #include "core.h"
@@ -709,7 +710,73 @@ int findPatientIndexByPatientNum(int patientNumber, const struct Patient patient
     return -1;
 }
 
+// Sort all appointment by date and time
+void sortAllAppointment(struct Appointment appoint[], const int max)
+{
+    int i, j, minpos;
+    struct Appointment temp1;
 
+    for (i = 0; appoint[i].patientNumber != 0 && i < max; i++)
+    {
+        minpos = i;
+        for (j = i + 1; appoint[j].patientNumber != 0 && j < max; j++)
+        {
+            if (appoint[j].date.year < appoint[minpos].date.year)
+            {
+                minpos = j;
+            }
+            else if (appoint[j].date.year == appoint[minpos].date.year)
+            {
+                if (appoint[j].date.month < appoint[minpos].date.month)
+                {
+                    minpos = j;
+                }
+                else if (appoint[j].date.month == appoint[minpos].date.month)
+                {
+                    if (appoint[j].date.day < appoint[minpos].date.day)
+                    {
+                        minpos = j;
+                    }
+                    else if (appoint[j].date.day == appoint[minpos].date.day)
+                    {
+                        if (appoint[j].time.hour < appoint[minpos].time.hour)
+                        {
+                            minpos = j;
+                        }
+                        else if (appoint[j].time.hour == appoint[minpos].time.hour)
+                        {
+                            if (appoint[j].time.min < appoint[minpos].time.min)
+                            {
+                                minpos = j;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (minpos != i)
+        {
+            temp1 = appoint[i];
+            appoint[i] = appoint[minpos];
+            appoint[minpos] = temp1;
+        }
+    }
+}
+
+
+// Get the last non-empty appointment index
+int lastAppointmentIndex(const struct Appointment* appointment, const int max)
+{
+    int i, index = -1;
+
+    for (i = 0; i < max && appointment[i].patientNumber != 0; i++)
+    {
+        if (appointment[i].patientNumber != 0 && appointment[i + 1].patientNumber == 0) index = i;
+    }
+
+    return index;
+}
 //////////////////////////////////////
 // USER INPUT FUNCTIONS
 //////////////////////////////////////
@@ -836,6 +903,54 @@ void inputPhoneData(struct Phone* phone)
     }
 }
 
+//Get user input for date
+void inputDate(struct Date* date)
+{
+    printf("Year        : ");
+    date->year = inputIntRange(2020, 2030);
+    printf("Month (1-12): ");
+    date->month = inputIntRange(1, 12);
+    if (date->month == 2)
+    {
+        if (date->year % 4 == 0)
+        {
+            printf("Day (1-29)  : ");
+            date->day = inputIntRange(1, 29);
+        }
+        else
+        {
+            printf("Day (1-28)  : ");
+            date->day = inputIntRange(1, 28);
+        }
+    }
+    else if (date->month == 4 || date->month == 6 || date->month == 9 || date->month == 11)
+    {
+        printf("Day (1-30)  : ");
+        date->day = inputIntRange(1, 30);
+    }
+    else
+    {
+        printf("Day (1-31)  : ");
+        date->day = inputIntRange(1, 31);
+    }
+}
+
+
+//Get user input for time
+void inputTime(struct Time* time)
+{
+    int valid = 0;
+    while (!valid)
+    {
+        printf("Hour (0-23)  : ");
+        time->hour = inputIntRange(0, 23);
+        printf("Minute (0-59): ");
+        time->min = inputIntRange(0, 59);
+        if ((time->hour >= TIME_START && time->hour < TIME_END) && time->min % TIME_INTERVAL == 0) valid = 1;
+        else if (time->hour == TIME_END && time->min == 0) valid = 1;
+        else printf("ERROR: Time must be between %d:00 and %d:00 in %d minute intervals.\n\n", TIME_START, TIME_END, TIME_INTERVAL);
+    }
+}
 
 //////////////////////////////////////
 // FILE FUNCTIONS

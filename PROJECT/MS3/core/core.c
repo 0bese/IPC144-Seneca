@@ -15,8 +15,18 @@ piece of work is entirely of my own creation.
 
 #include <stdio.h>
 #include <string.h>
-
+#include <ctype.h>
 #include "core.h"
+
+
+//////////////////////////////////////
+// USER INPUT FUNCTIONS
+//////////////////////////////////////
+
+//
+// Copy your work done from Milestone #2 (core.c) into this file
+// - Organize your functions in the same order as they are listed in the core.h file
+//
 
 //////////////////////////////////////
 // USER INTERFACE FUNCTIONS
@@ -155,7 +165,7 @@ char inputCharOption(const char str[])
 }
 
 // -- TEST 06 & 07 & 08 -- User input a string in a range of length
-void inputCString(char* cStr, int minChar, int maxChar)
+void inputCString(char* cStr, int min_char, int max_char)
 {
     // flag
     int done = 1;
@@ -167,7 +177,7 @@ void inputCString(char* cStr, int minChar, int maxChar)
         int len = 0;
 
         // while the char is not a new line AND length is not more that the max length...
-        while (ch != '\n' && len <= maxChar)
+        while (ch != '\n' && len <= max_char)
         {
             ch = getchar();
             cStr[len] = ch;
@@ -177,7 +187,7 @@ void inputCString(char* cStr, int minChar, int maxChar)
 
         // We need to add '\0' in the array, so we need to add it OR REPLACE the last char if it is full 
         // check if there is space 
-        if (ch == '\n' && len <= (maxChar + 1))
+        if (ch == '\n' && len <= (max_char + 1))
         {
             len--;
             cStr[len] = '\0';
@@ -185,7 +195,7 @@ void inputCString(char* cStr, int minChar, int maxChar)
         else
         {
             // if not, replace the last char to '\0' and we remove the extra char clearing the buffer 
-            cStr[maxChar] = '\0';
+            cStr[max_char] = '\0';
             clearInputBuffer();
         }
 
@@ -201,22 +211,22 @@ void inputCString(char* cStr, int minChar, int maxChar)
 
 
         // check if is exactly
-        if (minChar == maxChar && len != minChar)
+        if (min_char == max_char && len != min_char)
         {
             printf("Invalid 10-digit number! Number: ");
             ch = 'x';
 
         }
-        // check if is more than maxChar
-        else if (len > maxChar)
+        // check if is more than max_char
+        else if (len > max_char)
         {
-            printf("ERROR: String length must be no more than %d chars: ", maxChar);
+            printf("ERROR: String length must be no more than %d chars: ", max_char);
             ch = 'x';
         }
         // check if is between the range
-        else if (len < minChar || len > maxChar)
+        else if (len < min_char || len > max_char)
         {
-            printf("ERROR: String length must be between %d and %d chars: ", minChar, maxChar);
+            printf("ERROR: String length must be between %d and %d chars: ", min_char, max_char);
             ch = 'x';
         }
         else

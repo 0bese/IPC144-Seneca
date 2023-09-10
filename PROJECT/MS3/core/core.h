@@ -37,6 +37,7 @@ piece of work is entirely of my own creation.
 // USER INTERFACE FUNCTIONS
 //////////////////////////////////////
 
+
 // Clear the standard input buffer
 void clearInputBuffer(void);
 
@@ -48,27 +49,23 @@ void suspend(void);
 // USER INPUT FUNCTIONS
 //////////////////////////////////////
 
-// User input an integer
+//return an integer value
 int inputInt(void);
 
-// User input a positive integer
+//return a positive integer value
 int inputIntPositive(void);
 
-// User input a integer that is between two numbers
-int inputIntRange(int lowerBound, int upperBound);
+//return an integer value in desired range
+int inputIntRange(const int lower, const int upper);
 
-// User input a character
-char inputCharOption(const char str[]);
+//return a single character within the list of input characters
+char inputCharOption(const char* chars);
 
-// User input a string in a range of length
-void inputCString(char* cStr, int minChar, int maxChar);
+//return a character string that have desired length
+void inputCString(char* string, const int min, const int max);
 
-//////////////////////////////////////
-// UTILITY FUNCTIONS
-//////////////////////////////////////
-
-// Display the user phone 
-void displayFormattedPhone(const char* phoneNum);
+//display formatted phone number only if its a vaild phone number
+void displayFormattedPhone(const char* string);
 
 
 // !!! DO NOT DELETE THE BELOW LINE !!!

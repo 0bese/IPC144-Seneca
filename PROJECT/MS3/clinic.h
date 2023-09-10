@@ -171,12 +171,6 @@ void addAppointment(struct Appointment *app, int, struct Patient *pt, int);
 // Todo:
 void removeAppointment(struct Appointment *app, int, struct Patient *pt, int);
 
-// Sort all appointment by date and time
-void sortAllAppointment(struct Appointment appoint[], const int max);
-
-// Get the last non-empty appointment index
-int lastAppointmentIndex(const struct Appointment* appointment, const int max);
-
 
 //////////////////////////////////////
 // UTILITY FUNCTIONS
@@ -194,6 +188,14 @@ int nextPatientNumber(const struct Patient patient[], int max);
 // Find the patient array index by patient number (returns -1 if not found)
 int findPatientIndexByPatientNum(int patientNumber,
                                  const struct Patient patient[], int max);
+
+
+// Sort all appointment by date and time
+void sortAllAppointment(struct Appointment appoint[], const int max);
+
+// Get the last non-empty appointment index
+int lastAppointmentIndex(const struct Appointment* appointment, const int max);
+
 
 // Checks to see whether a time slot is available
 int timeSlotAvailable(struct Date date, struct Time time, struct Appointment *app, int maxAppointments);
